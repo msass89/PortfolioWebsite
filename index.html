@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="A simple personal website showcasing my skills and projects.">
+    <link rel="stylesheet" href="styles.css">
+    <title>My Website</title>
+</head>
+<body>
+    <header role="banner">
+        <h1>My Portfolio Website</h1>
+        <nav class="nav" role="navigation">
+            <a href="#home">Home</a>
+            <a href="#about">About</a>
+            <a href="#skills">Skills</a>
+            <a href="#projects">Projects</a>
+            <a href="#contact">Contact</a>
+        </nav>
+        <div id="burger">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+    </header>  
+    <main role="main">
+        <section id="home">
+            <h2>Home</h2>
+            <p>Welcome to my personal website. Take a look at my projects and skills or contact me using the form below.</p>
+        </section>
+        <section id="about">
+            <h2>About Me</h2>
+            <article>My name is Maike and I'm a passionate developer located in Bremen, Germany. I have experience in game development, 3D modeling and full-stack development.
+            <br>
+            <br>
+            The most important project I am currently working on is a Unity-based indie game called Roots of Revival. You can find more information about it in the <a href="#projects" role="navigation">projects section</a>.
+            <br>
+            <br>
+            Furthermore, I enjoy learning new technologies and improving my skills in various programming languages and frameworks. Currently I am focusing on enhancing my knowledge in backend development with C# and ASP.NET as well as web development with JavaScript as well as .NET Blazor.</article>
+        </section>
+        <section id="skills">
+            <h2>Skills</h2>
+            <div id="skill-container">
+                <div class="skills">
+                    <h3>Backend-Development:</h3>
+                    <ul>
+                        <li>C#</li>
+                        <li>ASP.NET</li>
+                        <li>Python</li>
+                        <li>Java</li>
+                        <li>SQL</li>
+                    </ul>
+                </div>
+                <div class="skills">
+                    <h3>Webdevelopment:</h3>
+                    <ul>
+                        <li>HTML and CSS</li>
+                        <li>Semantic HTML</li>
+                        <li>JavaScript</li>
+                        <li>.Net Blazor</li>
+                        <li>Responsive Webdesign</li>
+                        <li>Accessibility</li>
+                    </ul>
+                </div>
+                <div class="skills">
+                    <h3>Game Development:</h3>
+                    <ul>
+                        <li>Unity Engine</li>
+                        <li>C# Scripting</li>
+                        <li>Blender</li>
+                        <li>3D Modeling and Texturing</li>
+                        <li>Animation</li>
+                    </ul>
+                </div>
+                <div class="skills">
+                    <h3>Further Tools & Skills:</h3>
+                    <ul>
+                        <li>Git and GitHub</li>
+                        <li>Visual Studio / Visual Studio Code</li>
+                        <li>Microsoft Azure</li>
+                        <li>Jupyter Notebooks</li>
+                        <li>Agile Methodologies (Scrum & Kanban)</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+        <section id="projects">
+            <h2>Projects</h2>
+            <p>Take a look at my projects below:</p>
+            <div class="filters">
+                <label>Filter by category: <input type="checkbox" value="web" role="checkbox"> Web</label>
+                <label><input type="checkbox" value="gamedev" role="checkbox"> Game Development</label>
+                <label><input type="checkbox" value="unity" role="checkbox"> Unity</label>
+                <label><input type="checkbox" value="3d" role="checkbox"> 3D</label>
+                <label><input type="checkbox" value="blender" role="checkbox"> Blender</label>
+                <label><input type="checkbox" value="c#" role="checkbox"> C#</label>
+                <label><input type="checkbox" value="javascript"> JavaScript</label>
+                <label><input type="checkbox" value="java" role="checkbox"> Java</label>
+            </div>
+            <div class="project-gallery">
+                <figure class="item gamedev unity 3d blender c#">
+                    <img src="img/roots_of_revival_screenshot.png" class="lightbox-img" alt="Screenshot of Indie Game Roots of Revival" role="img">
+                    <figcaption>Roots of Revival</figcaption>
+                    <details role="details">An indie game I am currently developing with Unity, C# and Blender. See more details about the current development stage on my <a href="https://www.youtube.com/@MaikesGameDevSpace" target="_blank" rel="noopener" role="link">YouTube channel</a>.</details>
+                </figure>
+                <figure class="item c#">
+                    <img src="img/inventory_management_system.png" class="lightbox-img" alt="Screenshot of Inventory Management System" role="img">
+                    <figcaption>Inventory Management System</figcaption>
+                    <details role="details">A console-based inventory management system written in C# that allows users to add, remove, and view items in their inventory. See more details on <a href="https://github.com/msass89/InventoryManagementSystem" target="_blank" rel="noopener" role="link">GitHub</a>.</details>
+                </figure>
+                <figure class="item web javascript">
+                    <img src="img/async_javascript.png" class="lightbox-img" alt="Screenshot of Async JavaScript Code" role="img">
+                    <figcaption>Async JavaScript Code</figcaption>
+                    <details role="details">Demonstrates the use of asynchronous programming in JavaScript using Promises and async/await syntax. See more details on <a href="https://github.com/msass89/AsyncJavaScript" target="_blank" rel="noopener" role="link">GitHub</a>.</details>
+                </figure>
+                <figure class="item c#">
+                    <img src="img/library_management_system.png" class="lightbox-img" alt="Screenshot of Library Management System" role="img">
+                    <figcaption>Library Management System</figcaption>
+                    <details role="details">A console-based library management system written in C# that allows users to add, remove, and view books in the library. See more details on <a href="https://github.com/msass89/LibraryManagementSystem" target="_blank" rel="noopener" role="link">GitHub</a>.</details>
+                </figure>
+                <figure class="item c#">
+                    <img src="img/to_do_list_manager.png" class="lightbox-img" alt="Screenshot of To-Do List Application" role="img">
+                    <figcaption>To-Do List Application</figcaption>
+                    <details role="details">A simple console-based to-do list application written in C# that allows users to add, delete, and mark tasks as completed. See more details on <a href="https://github.com/msass89/ToDoListManager" target="_blank" rel="noopener" role="link">GitHub</a>.</details>
+                </figure>
+                <figure class="item java">
+                    <img src="img/school_app.png" class="lightbox-img" alt="Screenshot of School Application" role="img">
+                    <figcaption>School Application</figcaption>
+                    <details role="details">A console-based application that demonstrates the syntax and object-oriented programming principles with Java. See more details on <a href="https://github.com/msass89/School_TerminalApplication" target="_blank" rel="noopener" role="link">GitHub</a>.</details>
+                </figure>"
+            </div>
+        </section>
+        <section id="contact" role="address">
+            <h2>Contact</h2>
+            <p>For any requests or inquiries, please fill out the form below.</p>
+            <form id="contactForm" role="form">
+                <label for="name"><b>Your Name:</b></label>
+                <input type="text" id="name" name="name" required role="textbox">
+                <br>
+                <label for="email"><b>Your Email:</b></label>
+                <input type="email" id="email" name="email" required role="textbox">
+                <input type="hidden" name="to_email" value="maikesass89@gmail.com">
+                <br>
+                <label for="subject"><b>Subject:</b></label>
+                <input type="text" id="subject" name="subject" required role="textbox">
+                <br>
+                <label for="message"><b>Message:</b></label>
+                <input type="message" id="message" name="message" required role="textbox">
+                <br>
+                <input type="submit" value="Submit" role="button">
+            </form>
+        </section>
+    </main>
+    <footer role="contentinfo">
+        <div class="social-media-container">
+            <a href="https://www.linkedin.com/in/maikesass/" target="_blank" rel="noopener" class="social-link" role="link">
+                <img src="linkedin.png" alt="LinkedIn Profil" class="social-icon">
+            </a>
+            <a href="https://github.com/msass89" target="_blank" rel="noopener" class="social-link" role="link">
+                <img src="github.png" alt="GitHub Profil" class="social-icon">
+            </a>
+            <a href="https://www.youtube.com/@MaikesGameDevSpace" target="_blank" rel="noopener" class="social-link" role="link">
+                <img src="youtube.png" alt="YouTube Kanal" class="social-icon">
+            </a>
+        </div>
+        <p>&copy; 2025 My Website</p>
+    </footer>
+    <div id="lightbox">
+        <span id="lightbox-close">&times;</span>
+        <img id="lightbox-image">
+    </div>
+    <script type="text/javascript"
+        src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js">
+    </script>
+    <script src="script.js"></script>
+</body>
+</html>
