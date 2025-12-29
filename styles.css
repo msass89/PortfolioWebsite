@@ -1,14 +1,16 @@
 html {
-  scroll-padding-top: 22vh; 
+  scroll-padding-top: 17vh; 
+  width: 100%;
 }
 
 /* General styles */
 body {
-    font-size: 16px;
+    font-size: 1rem;
     font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
     background-color: #f4f4f4;
+    width: 100%;
 }
 
 header, footer {
@@ -21,14 +23,17 @@ header, footer {
 header {
     position: fixed;
     width: 100%;
-    min-height: min-content;
+    height: 15vh;
+}
+
+h1 {
+    font-size: 1.5rem;
 }
 
 main {
-    padding-left: 20px;
-    padding-right: 20px;
     padding-top: 25vh;
     padding-bottom: 20px;
+    width: 100%;
 }
 
 section {
@@ -36,6 +41,9 @@ section {
     background-color: #fff;
     padding: 15px;
     border-radius: 5px;
+    width: 80%;
+    margin-left: 5%;
+    margin-right: 15%;
 }
 
 section h2 {
@@ -88,7 +96,7 @@ section h2 {
 /* Skill container styles */
 #skill-container {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
     gap: 15px;
     margin-top: 20px;
 }
@@ -105,7 +113,7 @@ div .skills {
 /* Project gallery styles */
 .project-gallery {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(400px, 1fr));
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
     justify-content: start;
     gap: 10px;
 }
@@ -145,9 +153,13 @@ form input[type="message"] {
     border-radius: 4px;
 }
 
-form input[type="message"] {
-    height: 100px;
+textarea {
+    padding: 8px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
     width: 90%;
+    min-height: 200px;
     resize: vertical;
 }
 
@@ -158,6 +170,10 @@ form input[type="submit"] {
     padding: 10px 15px;
     border-radius: 4px;
     cursor: pointer;
+    font-size: large;
+    min-width: 150px;
+    width: 20vw;
+    height: 8vh;
 }
 
 /* Lightbox styles */
@@ -232,12 +248,32 @@ form input[type="submit"] {
 
 @media screen and (min-width: 769px) and (max-width: 1200px) {
     body {
-        font-size: 18px;
+        font-size: 1rem;
+    }
+
+    textarea {
+        width: 70%;
+    }
+
+    form input[type="submit"] {
+        width: 15vw;
     }
 }
 
 @media screen and (min-width: 1201px) {
     body {
-        font-size: 20px;
+        font-size: 1rem;
+    }
+
+    header {
+        height: 15vh;
+    }
+
+    textarea {
+        width: 50%;
+    }
+
+    form input[type="submit"] {
+        width: 10vw;
     }
 }
