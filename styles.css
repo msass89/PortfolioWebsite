@@ -24,6 +24,7 @@ header {
     position: fixed;
     width: 100%;
     height: 15vh;
+    min-height: min-content;
 }
 
 h1 {
