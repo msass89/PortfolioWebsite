@@ -1,4 +1,4 @@
-// EmailJS initialisieren
+// EmailJS initialization
 (function () {
   emailjs.init("FbcccHWRjmInOlwSO");
 })();
@@ -10,8 +10,8 @@ document.addEventListener("DOMContentLoaded", function () {
   const burger = document.getElementById("burger");
   const nav = document.querySelector("nav");
   const navLinks = document.querySelectorAll(".nav a");
-  const checkboxes = document.querySelectorAll('.filters input');
-  const items = document.querySelectorAll('.project-gallery .item');
+  const checkboxes = document.querySelectorAll(".filters input");
+  const items = document.querySelectorAll(".project-gallery .item");
   const lightbox = document.getElementById("lightbox");
   const lightboxImage = document.getElementById("lightbox-image");
   const closeButton = document.getElementById("lightbox-close");
@@ -26,11 +26,6 @@ document.addEventListener("DOMContentLoaded", function () {
     link.addEventListener("click", () => {
       nav.classList.remove("active");
     });
-  });
-
-  // Filter project items based on selected checkboxes
-  checkboxes.forEach(checkbox => {
-    checkbox.addEventListener('change', filterItems);
   });
 
   // Send contact form using EmailJS
@@ -73,15 +68,45 @@ document.addEventListener("DOMContentLoaded", function () {
     if (event.target === lightbox) lightbox.classList.remove("active");
   });
 
-  // Filter-Funktion for project gallery
-  function filterItems() {
-    const active = [...checkboxes]
-      .filter(cb => cb.checked)
-      .map(cb => cb.value);
+    // Filter project items based on selected checkboxes
+  checkboxes.forEach(checkbox => {
+    checkbox.addEventListener("change", () => {
 
+      // If one checkbox is checked, uncheck all other checkboxes
+      if (checkbox.checked) {
+        checkboxes.forEach(other => {
+          if (other !== checkbox) {
+            other.checked = false;
+          }
+        });
+      }
+
+      // If no checkbox is checked, check "All"
+      if (![...checkboxes].some(checkbox => checkbox.checked)) {
+      document
+        .querySelector('input[value="all"]')
+        .checked = true;
+      }
+
+      filterItems();
+    });
+  });
+
+  // Filter-Function for project gallery
+  function filterItems() {
+    const active = [...checkboxes].find(cb => cb.checked);
+
+    // If "All" is selected, show all items
+    if (active.value === "all") {
+      items.forEach(item => item.classList.remove("hide"));
+      return;
+    }
+
+    // Otherwise, show only items that match the selected tag
+    const tag = active.value;
     items.forEach(item => {
-      const match = active.every(tag => item.classList.contains(tag));
-      item.classList.toggle("hide", active.length && !match);
+      const match = item.classList.contains(tag);
+      item.classList.toggle("hide", !match);
     });
   }
 
