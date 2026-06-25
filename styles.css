@@ -96,6 +96,25 @@ section h2 {
     font-size: large;
 }
 
+.flexbox {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: flex-start;
+    gap: 15px;
+}
+
+.flexbox figure {
+    flex: 0 0 30%;
+    margin: 0;
+}
+
+.flexbox figure img {
+    width: 100%;
+    height: auto;
+    
+}
+
 /* Skill container styles */
 #skill-container {
     display: grid;
@@ -129,7 +148,7 @@ div .skills {
   display: none;
 }
 
-img {
+.project-gallery img {
   width: 100%;
   height: auto;
   border-radius: 5px;
