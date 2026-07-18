@@ -101,25 +101,8 @@
                 <label><input type="checkbox" value="game"> Game</label>
                 <label><input type="checkbox" value="other"> Other</label>
             </div>
-            <div class="project-gallery">
-                <figure class="item web">
-                    <img src="img/self_service_portal.png" class="lightbox-img" alt="Screenshot of Self-Service-Portal" role="img">
-                    <figcaption><b>Self-Service-Portal</b></figcaption>
-                    <details role="details">A multi-tenancy SaaS fullstack-project build with ASP.NET Razor Pages. Currently in development. See more details on <a href="https://github.com/msass89/Self-Service-Portal" target="_blank" rel="noopener" role="link">GitHub</a>.</details>
-                    <p><i>Last Update: <time class="last-upload" datetime="2026-05-18">May 18, 2026</time></i></p>
-                </figure>
-                <figure class="item web">
-                    <img src="img/InventoryManagementApi.png" class="lightbox-img" alt="Screenshot of Inventory and Order Management API" role="img">
-                    <figcaption><b>Inventory and Order Management API</b></figcaption>
-                    <details role="details">A RESTful API for managing inventory items and orders using Asp.Net and Swagger. Currently in development. See more details on <a href="https://github.com/msass89/InventoryOrderManagementApp" target="_blank" rel="noopener" role="link">GitHub</a>.</details>
-                    <p><i>Last Update: <time class="last-upload" datetime="2026-05-30">May 30, 2026</time></i></p>
-                </figure>
-                <figure class="item game">
-                    <img src="img/roots_of_revival_screenshot.png" class="lightbox-img" alt="Screenshot of Indie Game Roots of Revival" role="img">
-                    <figcaption><b>Roots of Revival</b></figcaption>
-                    <details role="details">An indie game I am currently developing with Unity, C# and Blender. See more details about the current development stage on my <a href="https://www.youtube.com/@MaikesGameDevSpace" target="_blank" rel="noopener" role="link">YouTube channel</a>.</details>
-                    <p><i>Last Update: <time class="last-upload" datetime="2025-12-15">December 15, 2025</time></i></p>
-                </figure>
+            <div class="project-gallery" id="project-gallery">
+
             </div>
         </section>
         <section id="contact" role="address">
@@ -159,6 +142,7 @@
     <div id="lightbox">
         <span id="lightbox-close">&times;</span>
         <img id="lightbox-image">
+        <p id="lightbox-text"></p>
     </div>
     <script type="text/javascript"
         src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js">
