@@ -160,6 +160,10 @@ img.lightbox-img:hover {
   cursor: pointer;
 }
 
+.badge {
+    margin: 2px;
+}
+
 /* Contact form styles */
 form label {
     display: block;

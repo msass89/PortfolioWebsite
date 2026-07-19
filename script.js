@@ -4,7 +4,7 @@
 })();
 
 class Project {
-  constructor(projectClass, imageSource, imageAlt, projectName, projectDescription, projectLink, lastUpdate) {
+  constructor(projectClass, imageSource, imageAlt, projectName, projectDescription, projectLink, usedTechnologieArray, lastUpdate) {
     this.projectClass = projectClass;
     this.projectName = projectName;
     this.imageSource = imageSource;
@@ -12,6 +12,7 @@ class Project {
     this.imgClass = "lightbox-img";
     this.projectDescription = projectDescription;
     this.projectLink = projectLink;
+    this.usedTechnologieArray = [...usedTechnologieArray];
     this.lastUpdate = lastUpdate;
   }
 }
@@ -39,20 +40,23 @@ document.addEventListener("DOMContentLoaded", function () {
       "Self-Service-Portal", 
       "A multi-tenancy SaaS fullstack-project build with ASP.NET Razor Pages. Currently in development.", 
       "https://github.com/msass89/Self-Service-Portal", 
-      "2024-06-15"),
+      [".NET", "Razor Pages"], 
+      "2026-07-15"),
     new Project("web", 
       "img/InventoryManagementApi.png", 
       "Screenshot of Inventory and Order Management API", 
       "Inventory and Order Management API", 
       "A RESTful API for managing inventory items and orders using Asp.Net and Swagger. Currently in development.", 
       "https://github.com/msass89/Inventory-Management-API", 
-      "2024-06-15"),
+      [".NET", "Swagger"], 
+      "2026-07-15"),
     new Project("game", 
       "img/roots_of_revival_screenshot.png", 
       "Screenshot of Roots of Revival", 
       "Roots of Revival", 
       "An indie game I am currently developing with Unity, C# and Blender.", 
       "https://github.com/msass89/Roots-of-Revival", 
+      ["Unity", "Blender"], 
       "2025-12-15")
   ];
 
@@ -84,10 +88,38 @@ document.addEventListener("DOMContentLoaded", function () {
     figcaption.setAttribute("role", "heading");
     projectElement.appendChild(figcaption);
 
-    const details = document.createElement("p");
-    details.innerHTML = `${project.projectDescription} <br><br>See more details on <a href="${project.projectLink}" target="_blank" rel="noopener" role="link">GitHub</a>.`;
-    details.setAttribute("role", "contentinfo");
-    projectElement.appendChild(details);
+    const description = document.createElement("p");
+    description.innerHTML = `${project.projectDescription}`;
+    description.setAttribute("role", "contentinfo");
+    projectElement.appendChild(description);
+
+    const moreDetails = document.createElement("p");
+    moreDetails.innerHTML = `See more details on <a href="${project.projectLink}" target="_blank" rel="noopener" role="link">GitHub</a>.`;
+    moreDetails.setAttribute("role", "contentinfo");
+    projectElement.appendChild(moreDetails);
+
+    project.usedTechnologieArray.forEach(tech => {
+      const techElement = document.createElement("span");
+
+      if (tech === ".NET") {
+        techElement.classList.add("badge", "badge-primary");
+      }
+      else if (tech === "Razor Pages") {
+        techElement.classList.add("badge", "badge-warning");
+      }
+      else if (tech === "Swagger") {
+        techElement.classList.add("badge", "badge-success");
+      }
+      else if (tech === "Unity") {
+        techElement.classList.add("badge", "badge-secondary");
+      }
+      else if (tech === "Blender") {
+        techElement.classList.add("badge", "badge-danger");
+      }
+
+      techElement.innerHTML = `${tech}`;
+      projectElement.appendChild(techElement);
+    });
 
     const lastUpdate = document.createElement("p");
     lastUpdate.innerHTML = `<b>Last Update: </b><time datetime="${project.lastUpdate}"><i>${project.lastUpdate}</i></time>`;
