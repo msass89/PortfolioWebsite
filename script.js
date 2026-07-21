@@ -4,7 +4,7 @@
 })();
 
 class Project {
-  constructor(projectClass, imageSource, imageAlt, projectName, projectDescription, projectLink, usedTechnologieArray, lastUpdate) {
+  constructor(projectClass, imageSource, imageAlt, projectName, projectDescription, projectLink, projectOrigin, usedTechnologieArray, lastUpdate) {
     this.projectClass = projectClass;
     this.projectName = projectName;
     this.imageSource = imageSource;
@@ -12,6 +12,7 @@ class Project {
     this.imgClass = "lightbox-img";
     this.projectDescription = projectDescription;
     this.projectLink = projectLink;
+    this.projectOrigin = projectOrigin;
     this.usedTechnologieArray = [...usedTechnologieArray];
     this.lastUpdate = lastUpdate;
   }
@@ -39,7 +40,8 @@ document.addEventListener("DOMContentLoaded", function () {
       "Screenshot of Self-Service-Portal", 
       "Self-Service-Portal", 
       "A multi-tenancy SaaS fullstack-project build with ASP.NET Razor Pages. Currently in development.", 
-      "https://github.com/msass89/Self-Service-Portal", 
+      "https://github.com/msass89/Self-Service-Portal",
+      "GitHub",
       [".NET", "Razor Pages"], 
       "2026-07-15"),
     new Project("web", 
@@ -47,7 +49,8 @@ document.addEventListener("DOMContentLoaded", function () {
       "Screenshot of Inventory and Order Management API", 
       "Inventory and Order Management API", 
       "A RESTful API for managing inventory items and orders using Asp.Net and Swagger. Currently in development.", 
-      "https://github.com/msass89/InventoryOrderManagementApi", 
+      "https://github.com/msass89/InventoryOrderManagementApi",
+      "GitHub",
       [".NET", "Swagger"], 
       "2026-07-15"),
     new Project("game", 
@@ -56,6 +59,7 @@ document.addEventListener("DOMContentLoaded", function () {
       "Roots of Revival", 
       "An indie game I am currently developing with Unity, C# and Blender.", 
       "https://www.youtube.com/@MaikesGameDevSpace", 
+      "Youtube",
       ["Unity", "Blender"], 
       "2025-12-15")
   ];
@@ -94,7 +98,7 @@ document.addEventListener("DOMContentLoaded", function () {
     projectElement.appendChild(description);
 
     const moreDetails = document.createElement("p");
-    moreDetails.innerHTML = `See more details on <a href="${project.projectLink}" target="_blank" rel="noopener" role="link">GitHub</a>.`;
+    moreDetails.innerHTML = `See more details on <a href="${project.projectLink}" target="_blank" rel="noopener" role="link">${project.projectOrigin}</a>.`;
     moreDetails.setAttribute("role", "contentinfo");
     projectElement.appendChild(moreDetails);
 
