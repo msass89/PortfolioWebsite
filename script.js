@@ -47,7 +47,7 @@ document.addEventListener("DOMContentLoaded", function () {
       "Screenshot of Inventory and Order Management API", 
       "Inventory and Order Management API", 
       "A RESTful API for managing inventory items and orders using Asp.Net and Swagger. Currently in development.", 
-      "https://github.com/msass89/Inventory-Management-API", 
+      "https://github.com/msass89/InventoryOrderManagementApi", 
       [".NET", "Swagger"], 
       "2026-07-15"),
     new Project("game", 
@@ -55,7 +55,7 @@ document.addEventListener("DOMContentLoaded", function () {
       "Screenshot of Roots of Revival", 
       "Roots of Revival", 
       "An indie game I am currently developing with Unity, C# and Blender.", 
-      "https://github.com/msass89/Roots-of-Revival", 
+      "https://www.youtube.com/@MaikesGameDevSpace", 
       ["Unity", "Blender"], 
       "2025-12-15")
   ];
