@@ -52,7 +52,7 @@ document.addEventListener("DOMContentLoaded", function () {
       "https://github.com/msass89/InventoryOrderManagementApi",
       "GitHub",
       [".NET", "Swagger"], 
-      "2026-07-15"),
+      "2026-08-16"),
     new Project("game", 
       "img/roots_of_revival_screenshot.png", 
       "Screenshot of Roots of Revival", 
